@@ -6,13 +6,18 @@
 class FileWorker {
 	private:
 		Logger* logger;
-		std::string dataFilePath;
 	public:
-		FileWorker::FileWorker(std::string filePath);
+		static string FileWorker::filePath;
+		FileWorker::FileWorker(std::string file);
+		FileWorker::FileWorker();
 		FileWorker::~FileWorker();
-		void FileWorker::writeEntries(std::vector<WebsiteEntry*> entries);
+		void FileWorker::writeEntries(std::vector<WebsiteEntry*> *entries);
+		void FileWorker::writeToBegin(WebsiteEntry* entry);
+		void FileWorker::writeToEnd(WebsiteEntry* entry);
+		void FileWorker::writeAtPos(WebsiteEntry* entry, int position);
 		void FileWorker::readEntries(std::vector<WebsiteEntry*> *entries);
-		void FileWorker::deleteEntry(std::vector<WebsiteEntry*> *entries, WebsiteEntry* entry);
-		void FileWorker::editEntry(std::vector<WebsiteEntry*> *entries, WebsiteEntry* entry);
-		bool FileWorker::checkIDUnicity(std::vector<WebsiteEntry* > *entries, WebsiteEntry* entry);
+		void FileWorker::deleteEntry(WebsiteEntry* entry);
+		void FileWorker::editEntry(WebsiteEntry* entry);
+		bool FileWorker::checkIDUnicity(WebsiteEntry* entry);
+		int FileWorker::getIDIncrement();
 };

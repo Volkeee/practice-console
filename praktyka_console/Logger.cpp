@@ -23,7 +23,7 @@ Logger::Logger(std::string filePath) {
 
 //Function to write  message with "INFO" label
 void Logger::i(std::string textToWrite) {
-	ofstream fout(this->logPath, std::ios_base::app);
+	ofstream fout(this->logPath, std::ios_base::app | std::ofstream::trunc);
 	fout << "[" << getTime().wHour << ":" << getTime().wMinute << ":" << getTime().wSecond << " INFO] " << textToWrite << endl;
 	fout.close();
 }
@@ -45,7 +45,7 @@ void Logger::a(std::string textToWrite) {
 //Function to clear the log
 void Logger::clearLog() {
 	std::ofstream ofs;
-	ofs.open("log.txt", std::ofstream::out | std::ofstream::trunc);
+	ofs.open(this->logPath, std::ofstream::out | std::ofstream::trunc);
 	ofs.close();
 }
 

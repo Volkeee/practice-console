@@ -1,11 +1,11 @@
 #include "stdafx.h"
 #include "WebsiteEntry.h"
 #include "Logger.h"
-
-
+#include "Tools.h"
 
 WebsiteEntry::WebsiteEntry(int id, string name, string type, long views, float pagerank)
 {
+	FileWorker worker();
 	this->setID(id);
 	this->setName(name);
 	this->setType(type);

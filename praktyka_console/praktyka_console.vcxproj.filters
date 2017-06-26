@@ -60,6 +60,24 @@
     <ClInclude Include="Tools.h">
       <Filter>Заголовочные файлы\Tools</Filter>
     </ClInclude>
+    <ClInclude Include="Console.h">
+      <Filter>Заголовочные файлы\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="Label.h">
+      <Filter>Заголовочные файлы\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="TextBox.h">
+      <Filter>Заголовочные файлы\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="Button.h">
+      <Filter>Заголовочные файлы\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="Form.h">
+      <Filter>Заголовочные файлы\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="FormAdd.h">
+      <Filter>Заголовочные файлы\GUI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -85,6 +103,24 @@
     </ClCompile>
     <ClCompile Include="Tools.cpp">
       <Filter>Файлы исходного кода\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="Console.cpp">
+      <Filter>Файлы исходного кода\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="Label.cpp">
+      <Filter>Файлы исходного кода\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="TextBox.cpp">
+      <Filter>Файлы исходного кода\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="Button.cpp">
+      <Filter>Файлы исходного кода\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="Form.cpp">
+      <Filter>Файлы исходного кода\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="FormAdd.cpp">
+      <Filter>Файлы исходного кода\GUI</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
