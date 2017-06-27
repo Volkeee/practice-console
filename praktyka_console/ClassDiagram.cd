@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Button">
+    <Position X="3.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AGAAAAAAAAAAIgAAAAAAAAACAAAAAAAIEACAAAEAYAA=</HashCode>
+      <FileName>Button.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Console">
+    <Position X="5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAgAAAAAAAAAAAACAAAAACAAAAAJAAA=</HashCode>
+      <FileName>Console.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileWorker">
+    <Position X="6.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAQBABCAQABACAIAAAAAEAAAAAAAAAOAAA=</HashCode>
+      <FileName>Tools.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Form">
+    <Position X="1.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Form.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FormAdd">
+    <Position X="1.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAIAAAAAARAAAAAAAAhAIAAYAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>FormAdd.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GuiElementBase">
+    <Position X="8.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAIAAAAAAAAAAAAIAAIAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GuiElementBase.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Label">
+    <Position X="3.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAEAAAIgAAAAAAAACCAAAAAAAIAAAAAAAAYAA=</HashCode>
+      <FileName>Label.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Logger">
+    <Position X="5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAQAAEAIAAAAAAAAAAAAAAAAAAAAiIAAAAAEAAAA=</HashCode>
+      <FileName>Logger.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Position">
+    <Position X="6.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAgAAAAAAAAAAABAAAAAABgAGAAAAA=</HashCode>
+      <FileName>Position.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Size">
+    <Position X="8.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAABAAAAAAAgAQAQAIAAAEAAAAAQAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Size.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextBox">
+    <Position X="3.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAIAAAAAIEIgAAAIAACACCAAAAAAAIAABgAAAAAAA=</HashCode>
+      <FileName>TextBox.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebsiteEntry">
+    <Position X="5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAgAAAIAQAACEAIAADAAAARAFAABAAAAEAAKASAA=</HashCode>
+      <FileName>WebsiteEntry.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

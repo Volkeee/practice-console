@@ -1,6 +1,7 @@
 #pragma once
 #include "Form.h"
 #include "WebsiteEntry.h"
+#include "Tools.h"
 #include <vector>
 #include <algorithm>
 
@@ -28,6 +29,7 @@ public:
 
 	int Initialize(char * F)
 	{
+		FileWorker *worker = new FileWorker();
 		Draw(40, 21, "Добавлення запису");
 
 		label1 = new Label(4,6, "Domain:",0,7);
@@ -44,7 +46,6 @@ public:
 		button2 = new Button(20,15, 15, 2, "Відміна", 0 ,7);
 
 		//cBase<Contact> *bs = new cBase<Contact>(F);
-		std::vector<WebsiteEntry*> *entries = new std::vector<WebsiteEntry*>();
 		switch(menu())
 		{
 		case 1:
@@ -56,8 +57,7 @@ public:
 				entry->setViews(stol(textBox3->getText()));
 				entry->setPagerank(stof(textBox4->getText()));
 
-				entries->push_back(entry);
-
+				worker->writeToEnd(entry);
 			}
 		case 2:
 			{
