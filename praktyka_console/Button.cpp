@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "Button.h"
 
-Button::Button(int X, int Y, int sizeX, int sizeY, string text,
+Button::Button(int X, int Y, int sizeX, int sizeY, std::string text,
 				 int text_color, int background_color)
 {
 	Button::X = X;

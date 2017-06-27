@@ -1,11 +1,11 @@
-#pragma once
+#include "Form.h"
 #include "FormOpen.h"
 #include "FormList.h"
 
 class FormMenu : public Form
 {
 public:
-	FormMenu()
+	FormMenu(void)
 	{
 		Initialize();
 	}

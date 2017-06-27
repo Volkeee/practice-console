@@ -1,4 +1,3 @@
-#pragma once
 #include "Form.h"
 #include "WebsiteEntry.h"
 #include "Tools.h"
@@ -78,8 +77,8 @@ public:
 				entry->setID(worker->getIDIncrement()+1);
 				entry->setName(textBox1->getText());
 				entry->setType(textBox2->getText());
-				entry->setViews(stol(textBox3->getText()));
-				entry->setPagerank(stof(textBox4->getText()));
+				entry->setViews(std::stol(textBox3->getText()));
+				entry->setPagerank(std::stof(textBox4->getText()));
 
 				worker->editEntry(entry);
 			}
@@ -119,8 +118,8 @@ public:
 				entry->setID(worker->getIDIncrement()+1);
 				entry->setName(textBox1->getText());
 				entry->setType(textBox2->getText());
-				entry->setViews(stol(textBox3->getText()));
-				entry->setPagerank(stof(textBox4->getText()));
+				entry->setViews(std::stol(textBox3->getText()));
+				entry->setPagerank(std::stof(textBox4->getText()));
 
 				worker->writeToEnd(entry);
 			}

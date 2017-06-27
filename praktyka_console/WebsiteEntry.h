@@ -1,35 +1,34 @@
 #pragma once
 #include <iostream>
 #include <string>
-using namespace std;
 
 class WebsiteEntry
 {
 	friend bool operator== (WebsiteEntry& left, WebsiteEntry& right);
 public:
 	WebsiteEntry();
-	WebsiteEntry(int id, string name, string type, long views, float pagerank);
+	WebsiteEntry(int id, std::string name, std::string type, long views, float pagerank);
 	~WebsiteEntry();
 private:
 	int identificator;
-	string name;
-	string type;
+	std::string name;
+	std::string type;
 	long views;
 	float pagerank;
 public:
 	void setID(int id),
-		setName(string name),
-		setType(string type),
+		setName(std::string name),
+		setType(std::string type),
 		setViews(long views),
 		setPagerank(float pagerank);
 	int getID();
-	string getName();
-	string getType();
+	std::string getName();
+	std::string getType();
 	long getViews();
 	float getPagerank();
 public:
-	string WebsiteEntry::toString();
-	WebsiteEntry* WebsiteEntry::fromString(string input);
+	std::string WebsiteEntry::toString();
+	WebsiteEntry* WebsiteEntry::fromString(std::string input);
 public:
 	bool WebsiteEntry::compare(WebsiteEntry* entry);
 	bool WebsiteEntry::compareByID(WebsiteEntry* entry);

@@ -39,7 +39,7 @@ int TextBox::Focus(int text_color, int background_color)
 		case 13: 
 			{
 				Draw(TextBox::text_color, TextBox::background_color);
-				return 1;
+				return 2;
 			}
 		case 72:
 		case 75: 

@@ -1,5 +1,4 @@
-﻿#pragma once
-#include "Form.h"
+﻿#include "Form.h"
 #include "Tools.h"
 #include "FormEntrySelected.h"
 
@@ -71,8 +70,10 @@ public:
 			case 80: Console::setCursor(1, iterator); putchar(186); iterator++; break;
 //TODO: Call FormEdit
 			case 13:
-				WebsiteEntry* entry = entries->at(iterator-5); 
-				formSelected->Initialize(entry);
+				if(!entries->empty()) {
+					WebsiteEntry* entry = entries->at(iterator-5); 
+					formSelected->Initialize(entry);
+				}
 				break;
 			}
 			if(iterator > entries->size()+4) iterator = 5;

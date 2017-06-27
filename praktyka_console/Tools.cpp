@@ -10,7 +10,7 @@
 #pragma region FileWorker
 	std::string FileWorker::filePath;
 	
-	FileWorker::FileWorker(string file) {
+	FileWorker::FileWorker(std::string file) {
 		this->logger = new Logger();
 		FileWorker::filePath = file;
 	}
@@ -40,7 +40,7 @@
 	}
 
 	void FileWorker::readEntries(std::vector<WebsiteEntry*> *entries) {
-		ifstream ifs(FileWorker::filePath);
+		std::ifstream ifs(FileWorker::filePath);
 		Logger* logger = new Logger();
 		auto line = std::string();
 		std::string::size_type sz;

@@ -4,7 +4,6 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-using namespace std;
 
 //Constructor without parameters to create a log with default name
 Logger::Logger(void)
@@ -23,22 +22,22 @@ Logger::Logger(std::string filePath) {
 
 //Function to write  message with "INFO" label
 void Logger::i(std::string textToWrite) {
-	ofstream fout(this->logPath, std::ios_base::app | std::ofstream::trunc);
-	fout << "[" << getTime().wHour << ":" << getTime().wMinute << ":" << getTime().wSecond << " INFO] " << textToWrite << endl;
+	std::ofstream fout(this->logPath, std::ios_base::app | std::ofstream::trunc);
+	fout << "[" << getTime().wHour << ":" << getTime().wMinute << ":" << getTime().wSecond << " INFO] " << textToWrite << std::endl;
 	fout.close();
 }
 
 //Function to write  message with "Error" label
 void Logger::e(std::string textToWrite) {
-	ofstream fout(this->logPath, std::ios_base::app);
-	fout << "[" << getTime().wHour << ":" << getTime().wMinute << ":" << getTime().wSecond << " ERROR] " << textToWrite << endl;
+	std::ofstream fout(this->logPath, std::ios_base::app);
+	fout << "[" << getTime().wHour << ":" << getTime().wMinute << ":" << getTime().wSecond << " ERROR] " << textToWrite << std::endl;
 	fout.close();
 }
 
 //Function to write  message with "Alarm" label
 void Logger::a(std::string textToWrite) {
-	ofstream fout(this->logPath, std::ios_base::app);
-	fout << "[" << getTime().wHour << ":" << getTime().wMinute << ":" << getTime().wSecond << " ALARM] " << textToWrite << endl;
+	std::ofstream fout(this->logPath, std::ios_base::app);
+	fout << "[" << getTime().wHour << ":" << getTime().wMinute << ":" << getTime().wSecond << " ALARM] " << textToWrite << std::endl;
 	fout.close();
 }
 

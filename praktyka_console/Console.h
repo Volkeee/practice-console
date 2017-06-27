@@ -3,7 +3,6 @@
 #include <windows.h>
 #include <conio.h>
 #include <iostream>
-using namespace std;
 
 class Console
 {

@@ -1,4 +1,3 @@
-#pragma once
 #include "FormAdd.h"
 
 class FormEntrySelected :
@@ -38,6 +37,7 @@ public:
 			case 1: if((ret=eB2->Focus(7, 0))==0) formEdit->InitializeForEdit(entry);
 				break;
 			}
+	}
 	}
 };
 

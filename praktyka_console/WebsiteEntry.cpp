@@ -3,7 +3,7 @@
 #include "Logger.h"
 #include "Tools.h"
 
-WebsiteEntry::WebsiteEntry(int id, string name, string type, long views, float pagerank)
+WebsiteEntry::WebsiteEntry(int id, std::string name, std::string type, long views, float pagerank)
 {
 	FileWorker worker();
 	this->setID(id);
@@ -23,11 +23,11 @@ void WebsiteEntry::setID(int id) {
 	this->identificator = id;
 }
 
-void WebsiteEntry::setName(string name) {
+void WebsiteEntry::setName(std::string name) {
 	this->name = name;
 }
 
-void WebsiteEntry::setType(string type) {
+void WebsiteEntry::setType(std::string type) {
 	this->type = type;
 }
 
@@ -43,11 +43,11 @@ int WebsiteEntry::getID() {
 	return this->identificator;
 }
 
-string WebsiteEntry::getName() {
+std::string WebsiteEntry::getName() {
 		return this->name;
 }
 	
-string WebsiteEntry::getType() {
+std::string WebsiteEntry::getType() {
 		return this->type;
 }
 	
@@ -59,16 +59,16 @@ float WebsiteEntry::getPagerank() {
 	return this->pagerank;
 }
 
-string WebsiteEntry::toString() {
-	return "\n\tWebsiteEntry: {\n\t\tid: " + to_string(this->getID())
+std::string WebsiteEntry::toString() {
+	return "\n\tWebsiteEntry: {\n\t\tid: " + std::to_string(this->getID())
 		+ ";\n\t\tname: " + this->getName()
 		+ ";\n\t\ttype: " + this->getType()
-		+ ";\n\t\tviews " + to_string(this->getViews())
-		+ ";\n\t\tpagerank: " + to_string(this->getPagerank())
+		+ ";\n\t\tviews " + std::to_string(this->getViews())
+		+ ";\n\t\tpagerank: " + std::to_string(this->getPagerank())
 		+ "\n\t}";
 }
 
-WebsiteEntry* WebsiteEntry::fromString(string input) {
+WebsiteEntry* WebsiteEntry::fromString(std::string input) {
 	WebsiteEntry* entry = new WebsiteEntry(2,"name1","type1",5678, 0.1);
 	return entry;
 }

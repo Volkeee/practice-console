@@ -105,11 +105,6 @@
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="Console.cpp" />
     <ClCompile Include="Form.cpp" />
-    <ClCompile Include="FormAdd.cpp" />
-    <ClCompile Include="FormEntrySelected.cpp" />
-    <ClCompile Include="FormList.cpp" />
-    <ClCompile Include="FormMenu.cpp" />
-    <ClCompile Include="FormOpen.cpp" />
     <ClCompile Include="GuiElementBase.cpp" />
     <ClCompile Include="Label.cpp" />
     <ClCompile Include="Logger.cpp" />
