@@ -75,11 +75,23 @@
     <ClInclude Include="FormAdd.h">
       <Filter>Заголовочные файлы\GUI</Filter>
     </ClInclude>
-    <ClInclude Include="FormList.h">
-      <Filter>Заголовочные файлы</Filter>
-    </ClInclude>
     <ClInclude Include="Console.h">
       <Filter>Заголовочные файлы\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="FormList.h">
+      <Filter>Заголовочные файлы\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="FormMenu.h">
+      <Filter>Заголовочные файлы\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="FormOpen.h">
+      <Filter>Заголовочные файлы\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="Message.h">
+      <Filter>Заголовочные файлы\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="FormEntrySelected.h">
+      <Filter>Заголовочные файлы\GUI</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -126,7 +138,19 @@
       <Filter>Файлы исходного кода\GUI</Filter>
     </ClCompile>
     <ClCompile Include="FormList.cpp">
-      <Filter>Файлы исходного кода</Filter>
+      <Filter>Файлы исходного кода\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="FormMenu.cpp">
+      <Filter>Файлы исходного кода\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="FormOpen.cpp">
+      <Filter>Файлы исходного кода\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="Message.cpp">
+      <Filter>Файлы исходного кода\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="FormEntrySelected.cpp">
+      <Filter>Файлы исходного кода\GUI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

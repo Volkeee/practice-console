@@ -7,7 +7,7 @@ class FileWorker {
 	private:
 		Logger* logger;
 	public:
-		static string FileWorker::filePath;
+		static std::string FileWorker::filePath;
 		FileWorker::FileWorker(std::string file);
 		FileWorker::FileWorker();
 		FileWorker::~FileWorker();

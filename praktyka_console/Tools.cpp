@@ -115,13 +115,15 @@
 
 	int FileWorker::getIDIncrement() {
 		std::vector<WebsiteEntry*> *entries = new std::vector<WebsiteEntry*>();
+		readEntries(entries);
 		std::vector<WebsiteEntry*>::const_iterator i = entries->begin();
 
 		int maxID = 0;
 		while (i != entries->end()) {
 			if((*i)->getID() > maxID) {
 				maxID = (*i)->getID();
-			}
+				i++;
+			} else i++;
 		}
 		return maxID;
 	}
@@ -131,15 +133,8 @@
 	}
 
 	void FileWorker::writeToEnd(WebsiteEntry* entry) {
-		std::vector<WebsiteEntry*> *entries = new std::vector<WebsiteEntry*>();
-		readEntries(entries);
-
 		std::ofstream o(FileWorker::filePath, std::ios_base::app);
-		std::vector<WebsiteEntry*>::const_iterator s = entries->begin();
-		while (s != entries->end()) {
-			o << (*s)->getID() << ";" << (*s)->getName() << ";"  << (*s)->getType() << ";"  << (*s)->getViews() << ";"  << (*s)->getPagerank() << "\n";
-			s++;
-		}
+		o << entry->getID() << ";" << entry->getName() << ";"  << entry->getType() << ";"  << entry->getViews() << ";"  << entry->getPagerank() << "\n";
 		o.close();
 	}
 
