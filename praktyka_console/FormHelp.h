@@ -24,7 +24,6 @@ public:
 			std::ifstream ifs("help.txt");
 			Logger* logger = new Logger();
 			auto line = std::string();
-			std::string::size_type sz;
 
 			int maxLength = 0, iterator = 0;
 			while(std::getline(ifs, line)) {
@@ -44,7 +43,7 @@ public:
 				it++; iterator++;
 			}
 		while(!exit) {
-			if(getch() == 8) exit = true;
+			if(_getch() == 8) exit = true;
 		}
 	}
 };

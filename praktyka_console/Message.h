@@ -12,7 +12,7 @@ public:
 		Draw(sizeX, sizeY, title, color, bg);
 		new Label(labelCoordX, labelCoordY, msg, bg,color);
 		new Button(buttonCoordX, buttonCoordY, buttonSixeX, buttonSixeY, "OK", bg, color);
-		getch();
+		_getch();
 	}
 
 };

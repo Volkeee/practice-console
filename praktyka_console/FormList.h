@@ -139,7 +139,7 @@ public:
 		} else {
 			bool editExit = false;
 			while(!exit)
-				if(getch() == 8) 
+				if(_getch() == 8) 
 					exit = true;
 		}
 	}
