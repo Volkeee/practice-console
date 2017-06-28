@@ -8,6 +8,7 @@ private:
 	std::vector<WebsiteEntry*> *entries;
 	FileWorker *worker;
 	FormEntrySelected *formSelected;
+	FormAdd *formAdd;
 	Logger *logger;
 public:
 	FormList()
@@ -16,6 +17,7 @@ public:
 		entries = new std::vector<WebsiteEntry*>();
 		logger = new Logger();
 		formSelected = new FormEntrySelected();
+		formAdd = new FormAdd();
 	}
 
 	void Print(std::vector<WebsiteEntry*> *entries, bool edit)
@@ -59,7 +61,19 @@ public:
 			charValue[entry.size()] = '\0';
 			std::copy(entry.begin(), entry.end(), charValue);
 			new Label(70, 5+i, charValue, 0, 7);
+			
+			int index = (*it)->getID() + 1;
+			entry = std::to_string(index);			
+			charValue = new char[entry.size()+1];
+			charValue[entry.size()] = '\0';
+			std::copy(entry.begin(), entry.end(), charValue);
+
 			i++; it++;
+			if (edit) {
+				if(it == entries->end()) {
+					new Label(3, 5+i, charValue, 0, 7);
+				}
+			}
 		}
 		bool exit = false; int iterator = 5;
 		if(edit) {
@@ -70,20 +84,32 @@ public:
 				case 80: Console::setCursor(1, iterator); putchar(186); iterator++; break;
 				case 13:
 					if(!entries->empty()) {
-						WebsiteEntry* entry = entries->at(iterator-5); 
-						formSelected->Initialize(entry);
-						formSelected->Show();
-						worker->readEntries(entries);
-						this->Print(entries, true);
-						exit = true;
+						if(iterator-5 < entries->size()) {
+							WebsiteEntry* entry = entries->at(iterator-5); 
+							formSelected->Initialize(entry);
+							formSelected->Show();
+							worker->readEntries(entries);
+							this->Print(entries, true);
+							exit = true;
+						} else {
+							formAdd->Initialize();
+							worker->readEntries(entries);
+							this->Print(entries, true);
+							exit = true;
+					}
+					} else {
+							formAdd->Initialize();
+							worker->readEntries(entries);
+							this->Print(entries, true);
+							exit = true;
 					}
 					break;
 				case 8: 
 					exit = true;
 					break;
 				}
-				if(iterator > entries->size()+4) iterator = 5;
-				if(iterator < 5) iterator = entries->size()+4;
+				if(iterator > entries->size()+5) iterator = 5;
+				if(iterator < 5) iterator = entries->size()+5;
 			} 
 		} else {
 			getch(); exit = true;

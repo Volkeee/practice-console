@@ -45,7 +45,11 @@ public:
 		{
 			switch(menu)
 			{
-			case 0: if((ret=eB2->Focus(7, 0))==0) formSelections->Initialize();
+			case 0: 
+				if((ret=eB2->Focus(7, 0))==0) {
+					formSelections->Show();
+				}
+
 				break;
 			case 1: if((ret=eB3->Focus(7, 0))==0) formOpen->Initialize();
 				break;
