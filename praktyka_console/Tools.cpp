@@ -44,7 +44,8 @@
 		Logger* logger = new Logger();
 		auto line = std::string();
 		std::string::size_type sz;
-		entries->clear();
+		if(!entries->empty())
+			entries->clear();
 		//stoi, stol and stof converts string type to int, long and float correspondly
 		while(std::getline(ifs, line)) {
 			WebsiteEntry* entry = new WebsiteEntry();

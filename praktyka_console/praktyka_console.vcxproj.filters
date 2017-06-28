@@ -93,6 +93,9 @@
     <ClInclude Include="FormEntrySelected.h">
       <Filter>Заголовочные файлы\GUI</Filter>
     </ClInclude>
+    <ClInclude Include="FormSelections.h">
+      <Filter>Заголовочные файлы\GUI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -132,9 +135,6 @@
       <Filter>Файлы исходного кода\GUI</Filter>
     </ClCompile>
     <ClCompile Include="Form.cpp">
-      <Filter>Файлы исходного кода\GUI</Filter>
-    </ClCompile>
-    <ClCompile Include="Message.cpp">
       <Filter>Файлы исходного кода\GUI</Filter>
     </ClCompile>
   </ItemGroup>

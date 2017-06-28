@@ -18,9 +18,8 @@ public:
 		formSelected = new FormEntrySelected();
 	}
 
-	void Print()
+	void Print(std::vector<WebsiteEntry*> *entries, bool edit)
 	{
-		worker->readEntries(entries);
 		Draw(85, 25, "Ñïèñîê");
 		new Label(3, 4, "ID          ", 15, 0);
 		new Label(15, 4, "Name                     ", 15, 0);
@@ -63,21 +62,31 @@ public:
 			i++; it++;
 		}
 		bool exit = false; int iterator = 5;
-		while(!exit) {
-			new Label(1, iterator, "X", 0, 7);
-			switch(_getch()) {
-			case 72: Console::setCursor(1, iterator); putchar(186); iterator--; break;
-			case 80: Console::setCursor(1, iterator); putchar(186); iterator++; break;
-//TODO: Call FormEdit
-			case 13:
-				if(!entries->empty()) {
-					WebsiteEntry* entry = entries->at(iterator-5); 
-					formSelected->Initialize(entry);
+		if(edit) {
+			while(!exit) {
+				new Label(1, iterator, "X", 0, 7);
+				switch(_getch()) {
+				case 72: Console::setCursor(1, iterator); putchar(186); iterator--; break;
+				case 80: Console::setCursor(1, iterator); putchar(186); iterator++; break;
+				case 13:
+					if(!entries->empty()) {
+						WebsiteEntry* entry = entries->at(iterator-5); 
+						formSelected->Initialize(entry);
+						formSelected->Show();
+						worker->readEntries(entries);
+						this->Print(entries, true);
+						exit = true;
+					}
+					break;
+				case 8: 
+					exit = true;
+					break;
 				}
-				break;
-			}
-			if(iterator > entries->size()+4) iterator = 5;
-			if(iterator < 5) iterator = entries->size()+4;
+				if(iterator > entries->size()+4) iterator = 5;
+				if(iterator < 5) iterator = entries->size()+4;
+			} 
+		} else {
+			getch(); exit = true;
 		}
 	}
 

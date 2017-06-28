@@ -89,6 +89,7 @@
     <ClInclude Include="FormList.h" />
     <ClInclude Include="FormMenu.h" />
     <ClInclude Include="FormOpen.h" />
+    <ClInclude Include="FormSelections.h" />
     <ClInclude Include="GuiElementBase.h" />
     <ClInclude Include="Label.h" />
     <ClInclude Include="Logger.h" />
@@ -108,7 +109,6 @@
     <ClCompile Include="GuiElementBase.cpp" />
     <ClCompile Include="Label.cpp" />
     <ClCompile Include="Logger.cpp" />
-    <ClCompile Include="Message.cpp" />
     <ClCompile Include="Position.cpp" />
     <ClCompile Include="praktyka_console.cpp" />
     <ClCompile Include="Size.cpp" />

@@ -1,39 +1,41 @@
 #include "Form.h"
 #include "FormOpen.h"
 #include "FormList.h"
+#include "FormSelections.h"
 
 class FormMenu : public Form
 {
 public:
 	FormMenu(void)
 	{
-		Initialize();
+		Initialize();		
 	}
 
 	~FormMenu()
 	{
-		delete f_add;
-		delete f_open;
-		delete f_print;
+		delete formOpen;
+		delete formList;
 	}
 
 	char file [255]; 
-	FormAdd  *f_add;
-	FormOpen *f_open;
-	FormList *f_print;
+	FormOpen *formOpen;
+	FormList *formList;
+	FormSelections *formSelections;
 
 	void Initialize()
 	{
-		f_open = new FormOpen();
-		f_add = new FormAdd();
-		f_print = new FormList();
+		formOpen = new FormOpen();
+		formList = new FormList();
+		formSelections = new FormSelections();
 		Show();
 	}
 
 	void Show()
 	{
+		FileWorker* worker = new FileWorker();
+		std::vector<WebsiteEntry*> *entries = new std::vector<WebsiteEntry*>();
 		Draw(29, 31, "Websites");
-		Button * eB2 = new Button(4, 5, 20, 3,"Add new\nwebsite", 0 ,7);
+		Button * eB2 = new Button(4, 5, 20, 3, "Selections", 0, 7);
 		Button * eB3 = new Button(4, 10, 20, 3,"Create/open\nnew file", 0 ,7);
 		Button * eB4 = new Button(4, 15, 20, 3,"Website\nlist", 0 ,7);
 		Button * eB5 = new Button(4, 20, 20, 2,"Exit", 0 ,7);
@@ -43,11 +45,15 @@ public:
 		{
 			switch(menu)
 			{
-			case 0: if((ret=eB2->Focus(7, 0))==0) f_add->Initialize();
+			case 0: if((ret=eB2->Focus(7, 0))==0) formSelections->Initialize();
 				break;
-			case 1: if((ret=eB3->Focus(7, 0))==0) f_open->Initialize();
+			case 1: if((ret=eB3->Focus(7, 0))==0) formOpen->Initialize();
 				break;
-			case 2: if((ret=eB4->Focus(7, 0))==0) f_print->Print();
+			case 2: 
+				if((ret=eB4->Focus(7, 0))==0) {
+					worker->readEntries(entries);
+					formList->Print(entries, true);
+				}
 				break;
 			case 3: if((ret=eB5->Focus(7, 0))==0) exit(0);
 				break;

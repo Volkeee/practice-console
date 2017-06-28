@@ -29,7 +29,7 @@ public:
 
 	int InitializeForEdit(WebsiteEntry* entry) {
 		FileWorker *worker = new FileWorker();
-		Draw(40, 50, "Add new entry");
+		Draw(40, 24, "Edit selected entry");
 
 		label1 = new Label(4,6, "Domain:",0,7);
 		label2 = new Label(4,9, "Type:",0,7);
@@ -61,7 +61,7 @@ public:
 		charValue = new char[string.size()+1];
 		charValue[string.size()] = '\0';
 		std::copy(string.begin(), string.end(), charValue);
-		textBox4 = new TextBox(13,11,21,0,7);
+		textBox4 = new TextBox(13,14,21,0,7);
 		textBox4->setText(charValue);
 
 		button1 = new Button(4, 18, 15, 2, "Edit", 0 ,7);
@@ -72,15 +72,15 @@ public:
 		{
 		case 1:
 			{
-				WebsiteEntry* entry = new WebsiteEntry();
+				WebsiteEntry* entry1 = new WebsiteEntry();
 
-				entry->setID(worker->getIDIncrement()+1);
-				entry->setName(textBox1->getText());
-				entry->setType(textBox2->getText());
-				entry->setViews(std::stol(textBox3->getText()));
-				entry->setPagerank(std::stof(textBox4->getText()));
+				entry1->setID(entry->getID());
+				entry1->setName(textBox1->getText());
+				entry1->setType(textBox2->getText());
+				entry1->setViews(std::stol(textBox3->getText()));
+				entry1->setPagerank(std::stof(textBox4->getText()));
 
-				worker->editEntry(entry);
+				worker->editEntry(entry1);
 			}
 		case 2:
 			{
