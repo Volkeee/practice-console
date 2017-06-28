@@ -43,7 +43,6 @@
 		std::ifstream ifs(FileWorker::filePath);
 		Logger* logger = new Logger();
 		auto line = std::string();
-		std::string::size_type sz;
 		if(!entries->empty())
 			entries->clear();
 		//stoi, stol and stof converts string type to int, long and float correspondly
@@ -81,6 +80,7 @@
 			} else i++;
 		}
 		writeEntries(entries);
+		rearrange();
 	}
 
 	void FileWorker::editEntry(WebsiteEntry* entry) {
@@ -129,10 +129,6 @@
 		return maxID;
 	}
 
-	void FileWorker::writeToBegin(WebsiteEntry* entry) {
-		
-	}
-
 	void FileWorker::writeToEnd(WebsiteEntry* entry) {
 		std::ofstream o(FileWorker::filePath, std::ios_base::app);
 		o << entry->getID() << ";" << entry->getName() << ";"  << entry->getType() << ";"  << entry->getViews() << ";"  << entry->getPagerank() << "\n";
@@ -142,6 +138,7 @@
 	void FileWorker::writeAtPos(WebsiteEntry* entry, int position) {
 		std::vector<WebsiteEntry*> *entries = new std::vector<WebsiteEntry*>();
 		readEntries(entries);
+		position--;
 
 		std::vector<WebsiteEntry*>::const_iterator it;
 		if(!entries->empty()) {
@@ -149,6 +146,20 @@
 			it = entries->insert (it, entry);
 			writeEntries(entries);
 		}
+		rearrange();
+	}
+
+	void FileWorker::rearrange() {
+		std::vector<WebsiteEntry*> *entries = new std::vector<WebsiteEntry*>();
+		readEntries(entries);
+
+		std::vector<WebsiteEntry*>::const_iterator i = entries->begin();
+		int iterator = 1;
+		while (i != entries->end()) {
+			(*i)->setID(iterator);
+			i++; iterator++;
+		}
+		writeEntries(entries);
 	}
 
 #pragma endregion FileClass

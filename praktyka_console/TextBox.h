@@ -4,6 +4,9 @@
 class TextBox
 {
 public:
+	int getTextLength() {
+		return this->lenText;
+	}
 	~TextBox(void);
 
 	TextBox(int x, int y, int size, int text_color,

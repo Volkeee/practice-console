@@ -20,4 +20,5 @@ class FileWorker {
 		void FileWorker::editEntry(WebsiteEntry* entry);
 		bool FileWorker::checkIDUnicity(WebsiteEntry* entry);
 		int FileWorker::getIDIncrement();
+		void FileWorker::rearrange();
 };

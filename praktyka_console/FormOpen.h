@@ -18,6 +18,8 @@ public:
 		tb1 = new TextBox(3,5,22,0,7);
 
 		tb1->Focus(0,7);
-		FileWorker::filePath = tb1->getText();
+		if(tb1->getTextLength() != 0)
+			FileWorker::filePath = tb1->getText();
+		else FileWorker::filePath = "data.txt";
 	}
 };

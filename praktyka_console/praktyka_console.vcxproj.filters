@@ -96,6 +96,9 @@
     <ClInclude Include="FormSelections.h">
       <Filter>Заголовочные файлы\GUI</Filter>
     </ClInclude>
+    <ClInclude Include="FormHelp.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

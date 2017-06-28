@@ -22,7 +22,7 @@ public:
 
 	void Print(std::vector<WebsiteEntry*> *entries, bool edit)
 	{
-		Draw(85, 25, "Ñïèñîê");
+		Draw(85, entries->size()+8, "Ñïèñîê");
 		new Label(3, 4, "ID          ", 15, 0);
 		new Label(15, 4, "Name                     ", 15, 0);
 		new Label(40, 4, "Type           ", 15, 0);
@@ -31,6 +31,7 @@ public:
 
 		std::vector<WebsiteEntry*>::const_iterator it = entries->begin();
 		int i = 0;
+		new Label(3, 5, "1", 0, 7);
 		while(it != entries->end()) {
 			std::string entry = std::to_string((*it)->getID());
 			char * charValue = new char[entry.size()+1];
@@ -92,13 +93,17 @@ public:
 							this->Print(entries, true);
 							exit = true;
 						} else {
-							formAdd->Initialize();
+							WebsiteEntry* entry = new WebsiteEntry();
+							entry->setID(iterator-4);
+							formAdd->Initialize(entry);
 							worker->readEntries(entries);
 							this->Print(entries, true);
 							exit = true;
-					}
+						}
 					} else {
-							formAdd->Initialize();
+							WebsiteEntry* entry = new WebsiteEntry();
+							entry->setID(iterator-4);
+							formAdd->Initialize(entry);
 							worker->readEntries(entries);
 							this->Print(entries, true);
 							exit = true;
@@ -107,12 +112,35 @@ public:
 				case 8: 
 					exit = true;
 					break;
+				case 73:
+					Console::setCursor(1, iterator); 
+					putchar(186);
+					iterator-=10;
+					break;
+				case 81:
+					Console::setCursor(1, iterator); 
+					putchar(186);
+					iterator+=10;
+					break;
+				case 71:
+					Console::setCursor(1, iterator); 
+					putchar(186);
+					iterator=5;
+					break;
+				case 79:
+					Console::setCursor(1, iterator); 
+					putchar(186);
+					iterator=entries->size()+5;
+					break;
 				}
 				if(iterator > entries->size()+5) iterator = 5;
 				if(iterator < 5) iterator = entries->size()+5;
 			} 
 		} else {
-			getch(); exit = true;
+			bool editExit = false;
+			while(!exit)
+				if(getch() == 8) 
+					exit = true;
 		}
 	}
 

@@ -2,8 +2,7 @@
 #include "Tools.h"
 
 class FormEntrySelected :
-	public Form
-{
+	public Form {
 public:
 	FormAdd *formAdd;
 	FormAdd *formEdit;
@@ -11,6 +10,7 @@ public:
 	WebsiteEntry* entry;
 
 	FormEntrySelected() {
+
 	}
 
 	~FormEntrySelected(void) {
@@ -27,10 +27,11 @@ public:
 	void Show() {
 		int ret, menu = 0;
 		bool exit = false;
-		Draw(29, 22, "Choose action");
+		Draw(29, 28, "Choose action");
 		Button * eB1 = new Button(4, 5, 20, 3,"Edit selected", 0 ,7);
 		Button * eB2 = new Button(4, 10, 20, 3,"Add at\nselected position", 0 ,7);
 		Button * eB3 = new Button(4, 15, 20, 3,"Delete selected", 0 ,7);
+		Button * eB4 = new Button(4, 21, 20, 2,"Cancel", 0 ,7);
 
 		while(!exit)
 		{
@@ -44,7 +45,7 @@ public:
 				break;
 			case 1: 
 				if((ret=eB2->Focus(7, 0))==0) {
-					formAdd->Initialize();
+					formAdd->Initialize(entry);
 					exit = true;
 				}
 				break;
@@ -55,12 +56,17 @@ public:
 					exit = true;
 				}
 				break;
+			case 3: 
+				if((ret=eB4->Focus(7, 0))==0) {
+					exit = true;
+				}
+				break;
 			}
 
 			menu+=ret;
 			if(menu < 0)
-				menu = 2;
-			if(menu > 2) 
+				menu = 3;
+			if(menu > 3) 
 				menu = 0;
 		}
 	}

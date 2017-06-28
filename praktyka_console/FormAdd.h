@@ -90,7 +90,7 @@ public:
 		return 0;
 	}
 
-	int Initialize()
+	int Initialize(WebsiteEntry* entry)
 	{
 		FileWorker *worker = new FileWorker();
 		Draw(40, 50, "Add new entry");
@@ -113,15 +113,16 @@ public:
 		{
 		case 1:
 			{
-				WebsiteEntry* entry = new WebsiteEntry();
-
-				entry->setID(worker->getIDIncrement()+1);
 				entry->setName(textBox1->getText());
 				entry->setType(textBox2->getText());
 				entry->setViews(std::stol(textBox3->getText()));
 				entry->setPagerank(std::stof(textBox4->getText()));
 
-				worker->writeToEnd(entry);
+				if(entry->getID() == worker->getIDIncrement() && worker->getIDIncrement() == 0) {
+					worker->writeToEnd(entry);
+				} else {
+					worker->writeAtPos(entry, entry->getID());
+				}
 			}
 		case 2:
 			{
